@@ -1,0 +1,31 @@
+﻿
+body {
+    background-image: url('ocean_background.jpg'); /* Replace with the actual path to your ocean image */
+    background-size: cover; /* Ensures the background image covers the entire viewport */
+    background-repeat: no-repeat; /* Prevents the background image from tiling */
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Comic Sans with fallback fonts */
+    color: black; /* Default text color is black */
+}
+
+.textbox {
+    background-color: beige;
+    padding: 15px; /* Add some padding inside the text box */
+    margin-bottom: 10px; /* Add some space below each text box */
+    border: 1px solid #ccc; /* Optional: Add a light gray border */
+}
+
+/* You can create more specific styles for different types of text elements */
+h1, h2, h3 {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: black; /* Ensure headings are also black */
+}
+
+p {
+    /* Paragraph text will inherit the body's font and color */
+}
+
+/* Example of styling a specific text box with a different color if needed */
+.important-textbox {
+    background-color: beige; /* A slightly different shade of beige */
+    color: black;
+}
