@@ -45,5 +45,16 @@ namespace CRUD
             //send to a page
             Response.Redirect("Default.aspx");
         }
+
+        protected void btnClear_Click(object sender, EventArgs e)
+        {
+            txtPassword.Text = "";
+            txtEmail.Text = "";
+            txtPasswordC.Text = "";
+            txtEmailC.Text = "";
+            txtFname.Text = "";
+            txtLname.Text = "";
+            txtYOB.Text = "";
+        }
     }
 }

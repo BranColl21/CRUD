@@ -24,6 +24,15 @@ namespace CRUD
         protected global::System.Web.UI.WebControls.Label lblNewValue;
 
         /// <summary>
+        /// cbEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cbEmail;
+
+        /// <summary>
         /// lblEmail control.
         /// </summary>
         /// <remarks>
@@ -33,13 +42,31 @@ namespace CRUD
         protected global::System.Web.UI.WebControls.Label lblEmail;
 
         /// <summary>
-        /// cbpassword control.
+        /// txtEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cbpassword;
+        protected global::System.Web.UI.WebControls.TextBox txtEmail;
+
+        /// <summary>
+        /// rfvEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEmail;
+
+        /// <summary>
+        /// cbPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cbPassword;
 
         /// <summary>
         /// lblPassword control.
@@ -69,31 +96,31 @@ namespace CRUD
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPassword;
 
         /// <summary>
-        /// lblPassC control.
+        /// lblPasswordC control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPassC;
+        protected global::System.Web.UI.WebControls.Label lblPasswordC;
 
         /// <summary>
-        /// txtPassC control.
+        /// txtPasswordC control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPassC;
+        protected global::System.Web.UI.WebControls.TextBox txtPasswordC;
 
         /// <summary>
-        /// cvPasswords control.
+        /// cvPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator cvPasswords;
+        protected global::System.Web.UI.WebControls.CompareValidator cvPassword;
 
         /// <summary>
         /// cbFname control.
@@ -123,13 +150,22 @@ namespace CRUD
         protected global::System.Web.UI.WebControls.TextBox txtFname;
 
         /// <summary>
-        /// CheckBox2 control.
+        /// rfvFname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox2;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvFname;
+
+        /// <summary>
+        /// cbLname control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cbLname;
 
         /// <summary>
         /// lblLname control.
@@ -150,13 +186,22 @@ namespace CRUD
         protected global::System.Web.UI.WebControls.TextBox txtLname;
 
         /// <summary>
-        /// CheckBox3 control.
+        /// rfvLname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox3;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvLname;
+
+        /// <summary>
+        /// cbYOB control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cbYOB;
 
         /// <summary>
         /// lblYOB control.
@@ -177,13 +222,13 @@ namespace CRUD
         protected global::System.Web.UI.WebControls.TextBox txtYOB;
 
         /// <summary>
-        /// btnUpdate control.
+        /// revYOB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnUpdate;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revYOB;
 
         /// <summary>
         /// SqlDataSource1 control.
@@ -193,5 +238,23 @@ namespace CRUD
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+
+        /// <summary>
+        /// btnUpdate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnUpdate;
+
+        /// <summary>
+        /// btnClear control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnClear;
     }
 }

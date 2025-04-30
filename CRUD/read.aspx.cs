@@ -67,6 +67,7 @@ namespace CRUD
             {
                 //success, send to success page and create session variable
                 Session["user"] = sUser;
+                Session["email"] = sUID;
                 Response.Redirect("success.aspx");
             }
             else
@@ -76,10 +77,10 @@ namespace CRUD
             }
         }
 
-        protected System.Void btnClear_Click(System.Object sender, System.EventArgs e)
+        protected void btnClear_Click(object sender, EventArgs e)
         {
-            txtEmail.Text = "";
             txtPassword.Text = "";
+            txtEmail.Text = "";
         }
     }
 }
