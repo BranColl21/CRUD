@@ -10,6 +10,8 @@
     </p>
     <p class="auto-style11">
         Hit the update info button to confirm these changes.</p>
+    <p class="auto-style11">
+        Click the update tab to refresh and see your changes.</p>
     <table class="auto-style12">
         <tr>
             <td class="auto-style23">Update Info</td>
@@ -39,7 +41,7 @@
             <td class="auto-style16">Password:<asp:Label ID="lblPassword" runat="server"></asp:Label>
             </td>
             <td class="auto-style17">
-                <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
             </td>
             <td>
                 <asp:RequiredFieldValidator ID="rfvPassword" runat="server" ControlToValidate="txtPassword" ErrorMessage="RequiredFieldValidator">Password required</asp:RequiredFieldValidator>
@@ -50,7 +52,7 @@
             <td class="auto-style16">&nbsp;</td>
             <td class="auto-style17">
                 <asp:Label ID="lblPasswordC" runat="server" Text="Confirm Password"></asp:Label>
-                <asp:TextBox ID="txtPasswordC" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtPasswordC" runat="server" TextMode="Password"></asp:TextBox>
             </td>
             <td>
                 <asp:CompareValidator ID="cvPassword" runat="server" ControlToCompare="txtPassword" ControlToValidate="txtPasswordC" ErrorMessage="CompareValidator">Passwords must match</asp:CompareValidator>
@@ -95,35 +97,40 @@
                 <asp:RegularExpressionValidator ID="revYOB" runat="server" ControlToValidate="txtYOB" ErrorMessage="Year of birth required" ValidationExpression="\d{4}"></asp:RegularExpressionValidator>
             </td>
         </tr>
+        </table>
+<p>
+    <asp:Label ID="lblStatus" runat="server"></asp:Label>
+</p>
+<table class="auto-style12">
         <tr>
-            <td class="auto-style18" colspan="2">
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Student4720ConnectionString %>" DeleteCommand="DELETE FROM [Login] WHERE [Email] = @Email" InsertCommand="INSERT INTO [Login] ([Email], [Password], [FName], [LName], [YOB]) VALUES (@Email, @Password, @FName, @LName, @YOB)" SelectCommand="SELECT * FROM [Login] WHERE ([Email] = @Email)" UpdateCommand="UPDATE [Login] SET [Password] = @Password, [FName] = @FName, [LName] = @LName, [YOB] = @YOB WHERE [Email] = @Email">
-                    <DeleteParameters>
-                        <asp:Parameter Name="Email" Type="String" />
-                    </DeleteParameters>
-                    <InsertParameters>
-                        <asp:Parameter Name="Email" Type="String" />
-                        <asp:Parameter Name="Password" Type="String" />
-                        <asp:Parameter Name="FName" Type="String" />
-                        <asp:Parameter Name="LName" Type="String" />
-                        <asp:Parameter Name="YOB" Type="Int32" />
-                    </InsertParameters>
-                    <SelectParameters>
-                        <asp:Parameter Name="Email" Type="String" />
-                    </SelectParameters>
-                    <UpdateParameters>
-                        <asp:Parameter Name="Password" Type="String" />
-                        <asp:Parameter Name="FName" Type="String" />
-                        <asp:Parameter Name="LName" Type="String" />
-                        <asp:Parameter Name="YOB" Type="Int32" />
-                        <asp:Parameter Name="Email" Type="String" />
-                    </UpdateParameters>
-                </asp:SqlDataSource>
+            <td class="auto-style18">
+                           <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Student4720ConnectionString2 %>" DeleteCommand="DELETE FROM [Login] WHERE [Email] = @Email" InsertCommand="INSERT INTO [Login] ([Email], [Password], [FName], [LName], [YOB]) VALUES (@Email, @Password, @FName, @LName, @YOB)" SelectCommand="SELECT * FROM [Login] WHERE ([Email] = @Email)" UpdateCommand="UPDATE [Login] SET [Password] = @Password, [FName] = @FName, [LName] = @LName, [YOB] = @YOB WHERE [Email] = @Email">
+                <DeleteParameters>
+                    <asp:Parameter Name="Email" Type="String" />
+                </DeleteParameters>
+                <InsertParameters>
+                    <asp:Parameter Name="Email" Type="String" />
+                    <asp:Parameter Name="Password" Type="String" />
+                    <asp:Parameter Name="FName" Type="String" />
+                    <asp:Parameter Name="LName" Type="String" />
+                    <asp:Parameter Name="YOB" Type="Int32" />
+                </InsertParameters>
+                <SelectParameters>
+                    <asp:Parameter Name="Email" Type="String" />
+                </SelectParameters>
+                <UpdateParameters>
+                    <asp:Parameter Name="Password" Type="String" />
+                    <asp:Parameter Name="FName" Type="String" />
+                    <asp:Parameter Name="LName" Type="String" />
+                    <asp:Parameter Name="YOB" Type="Int32" />
+                    <asp:Parameter Name="Email" Type="String" />
+                </UpdateParameters>
+            </asp:SqlDataSource>
                 <asp:Button ID="btnUpdate" runat="server" Text="Update Info" OnClick="btnUpdate_Click" />
-            </td>
-            <td class="auto-style11" colspan="2">
-                <asp:Button ID="btnClear" runat="server" Text="Clear" />
-            </td>
-        </tr>
-    </table>
+                </td>
+                <td class="auto-style11">
+                <asp:Button ID="btnClear" runat="server" Text="Clear" OnClick="btnClear_Click" Width="71px" />
+        </td>
+    </tr>
+</table>
 </asp:Content>

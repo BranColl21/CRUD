@@ -13,23 +13,25 @@ namespace CRUD
         protected void Page_Load(object sender, EventArgs e)
         {
             //did the user login
-            if (Session["user"] !=null)
+            if (Session["user"] != null)
             {
                 //welcome message
-                Response.Redirect("read.aspx");
+                lblMsg.Text = Session["user"].ToString();
+
 
             }
             else
             {
                 //not logged in 
-                
-                lblMsg.Text = Session["user"].ToString();
+                Response.Redirect("read.aspx");
+
             }
 
         }
-
-        protected void btnLogoff_Click(object sender, EventArgs e)
+        protected void btnLogoff_Click1(object sender, EventArgs e)
         {
+            Session["user"] = null;
+            Session["email"] = null;
             Response.Redirect("read.aspx");
         }
     }

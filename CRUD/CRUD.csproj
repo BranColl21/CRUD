@@ -73,6 +73,7 @@
     <Content Include="register.aspx" />
     <Content Include="StyleSheet1.css" />
     <Content Include="success.aspx" />
+    <Content Include="successbye.aspx" />
     <Content Include="update.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -119,6 +120,13 @@
     </Compile>
     <Compile Include="success.aspx.designer.cs">
       <DependentUpon>success.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="successbye.aspx.cs">
+      <DependentUpon>successbye.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="successbye.aspx.designer.cs">
+      <DependentUpon>successbye.aspx</DependentUpon>
     </Compile>
     <Compile Include="update.aspx.cs">
       <DependentUpon>update.aspx</DependentUpon>

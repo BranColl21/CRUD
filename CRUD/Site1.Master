@@ -7,12 +7,11 @@
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <link rel="stylesheet" href="Stylesheet1.css">
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                <p>
+        <div>              
                     <asp:HyperLink ID="hlHome" runat="server" NavigateUrl="~/default.aspx">Home</asp:HyperLink>
 &nbsp;|
                     <asp:HyperLink ID="hlRead" runat="server" NavigateUrl="~/read.aspx">Read</asp:HyperLink>
@@ -22,12 +21,10 @@
                     <asp:HyperLink ID="hlUpdate" runat="server" NavigateUrl="~/update.aspx">Update</asp:HyperLink>
 &nbsp;|
                     <asp:HyperLink ID="hlDelete" runat="server" NavigateUrl="~/delete.aspx">Delete</asp:HyperLink>
-                </p>
+             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">       
             </asp:ContentPlaceHolder>
         </div>
     </form>
 </body>
 </html>
-<head>
-    <link rel="stylesheet" href="Stylesheet1.css">
-</head>
+

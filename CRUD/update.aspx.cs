@@ -17,99 +17,167 @@ namespace CRUD
             //asking for information from the server withut a button being clicked 
             if(!IsPostBack)
             {
-                if (Session["user"] !=null)
+                if (Session["user"] != null)
                 {
-                    //display the current users information from the database.
-                    //this is the same code as the read and login pages.
-                    //declare a reader
-                    //declare a connection 
-                    //declare a command
-                    //open connection
-                    //execute the command
-
-                    while (DispCurrent.Read())
-                    {
-                        lblEmail.Text = DispCurrent.GetString(0);
-                        //the rest of the labels
-                    }
-
-                    //close the connection 
-
-                    //Turn off textbox controls,
-                    //Only show when checkbox is clicked
-                    txtPassword.Visible = false;
-                    txtPassC.Visible = false;
-
-                    //turn on validation controls 
-                    rfvPassword.Visible = false;
-                    cvPasswords.Visible = false;
-
-                    //hide the update labels 
-                    lblNewValue.Visible = false;
-                    lblPassC.Visible = false;
-
-                    //make sure all of the checkboxes are unchecked
-                    cbFname.Checked = false;
-
+                    LoadUserData();
+                    ToggleControls(false);
+                    UncheckAllCheckboxes();
                 }
-            else
+                else
                 {
                     Response.Redirect("default.aspx");
                 }
             }
         }
+        private void LoadUserData()
+        {
+            using (SqlConnection laConnection = new SqlConnection(SqlDataSource1.ConnectionString))
+            {
+                string selectQuery = "SELECT Email, Password, FName, LName, YOB FROM dbo.Login WHERE Email = @Email";
+                SqlCommand laCommand = new SqlCommand(selectQuery, laConnection);
+                laCommand.Parameters.AddWithValue("@Email", Session["email"].ToString());
+
+                laConnection.Open();
+                SqlDataReader laReader = laCommand.ExecuteReader(CommandBehavior.CloseConnection);
+
+                if (laReader.Read())
+                {
+                    lblEmail.Text = laReader.GetString(0);
+                    lblPassword.Text = laReader.GetString(1);
+                    lblFname.Text = laReader.GetString(2);
+                    lblLname.Text = laReader.GetString(3);
+                    lblYOB.Text = laReader.GetInt32(4).ToString();
+                }
+            }
+        }
+        private void ToggleControls(bool visible)
+        {
+            txtEmail.Visible = visible;
+            txtPassword.Visible = visible;
+            txtPasswordC.Visible = visible;
+            txtFname.Visible = visible;
+            txtLname.Visible = visible;
+            txtYOB.Visible = visible;
+
+            rfvEmail.Enabled = visible;
+            rfvPassword.Enabled = visible;
+            cvPassword.Enabled = visible;
+            rfvFname.Enabled = visible;
+            rfvLname.Enabled = visible;
+            revYOB.Enabled = visible;
+
+            lblNewValue.Visible = visible;
+            lblPasswordC.Visible = visible;
+        }
+        private void UncheckAllCheckboxes()
+        {
+            cbFname.Checked = false;
+            cbLname.Checked = false;
+            cbEmail.Checked = false;
+            cbPassword.Checked = false;
+            cbYOB.Checked = false;
+        }
+
+        protected void cbEmail_CheckedChanged(object sender, EventArgs e)
+        {
+            txtEmail.Visible = cbEmail.Checked;
+            rfvEmail.Enabled = cbEmail.Checked;
+            lblNewValue.Visible = cbEmail.Checked;
+            lblEmail.Visible = cbEmail.Checked;
+        }
+
+        protected void cbPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            bool visible = cbPassword.Checked;
+            txtPassword.Visible = visible;
+            txtPasswordC.Visible = visible;
+            cvPassword.Enabled = visible;
+            rfvPassword.Enabled = visible;
+            lblNewValue.Visible = visible;
+            lblPasswordC.Visible = visible;
+            lblPassword.Visible = visible;
+        }
+
+        protected void cbFname_CheckedChanged(object sender, EventArgs e)
+        {
+            txtFname.Visible = cbFname.Checked;
+            rfvFname.Enabled = cbFname.Checked;
+            lblNewValue.Visible = cbFname.Checked;
+            lblFname.Visible = cbFname.Checked;
+        }
+
+        protected void CheckBox5_CheckedChanged(object sender, EventArgs e)
+        {
+            txtLname.Visible = cbLname.Checked;
+            rfvLname.Enabled = cbLname.Checked;
+            lblNewValue.Visible = cbLname.Checked;
+            lblLname.Visible = cbLname.Checked;
+        }
+
+        protected void cbYOB_CheckedChanged(object sender, EventArgs e)
+        {
+            txtYOB.Visible = cbYOB.Checked;
+            revYOB.Enabled = cbYOB.Checked;
+            lblNewValue.Visible = cbYOB.Checked;
+            lblYOB.Visible = cbYOB.Checked;
+        }
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
-            //This is the code to move values from the textboxes to the insert statement
-            //Either the new value or the old value is moved based on the checkboxes
+            string oldEmail = Session["email"].ToString();
+            string newEmail = cbEmail.Checked ? txtEmail.Text : lblEmail.Text;
+            string newPassword = cbPassword.Checked ? txtPassword.Text : lblPassword.Text;
+            string newFname = cbFname.Checked ? txtFname.Text : lblFname.Text;
+            string newLname = cbLname.Checked ? txtLname.Text : lblLname.Text;
+            string newYOB = cbYOB.Checked ? txtYOB.Text : lblYOB.Text;
 
-            //declare a connection
-
-            //declare a command
-
-            //set parameter for email
-            UCommand.Parameters.AddWithValue("@Email", Session["email"].ToString);
-
-            //set parameter for password
-            if (cbpassword.Checked == true)
+            using (SqlConnection UConnection = new SqlConnection(SqlDataSource1.ConnectionString))
             {
-                UCommand.Parameters.AddWithValue("@Password", txtPassword.Text);
+                string updateQuery = @"
+                    UPDATE dbo.Login 
+                    SET Email = @NewEmail, Password = @Password, 
+                        FName = @FName, LName = @LName, YOB = @YOB 
+                    WHERE Email = @OldEmail";
+
+                SqlCommand UCommand = new SqlCommand(updateQuery, UConnection);
+                UCommand.Parameters.AddWithValue("@NewEmail", newEmail);
+                UCommand.Parameters.AddWithValue("@Password", newPassword);
+                UCommand.Parameters.AddWithValue("@FName", newFname);
+                UCommand.Parameters.AddWithValue("@LName", newLname);
+                UCommand.Parameters.AddWithValue("@YOB", Convert.ToInt32(newYOB));
+                UCommand.Parameters.AddWithValue("@OldEmail", oldEmail);
+
+                UConnection.Open();
+                UCommand.ExecuteNonQuery();
             }
-            else
+
+            // Update session email if it was changed
+            if (cbEmail.Checked)
             {
-                UCommand.Parameters.AddWithValue("@Password", lblPassword.Text);
+                Session["email"] = newEmail;
             }
 
-            //open the connection 
-
-            //execute the command 
-
-            //close the connection 
-
-            //show users the changes 
-            Response.Redirect("update.aspx");
+            lblStatus.Text = "Your profile has been updated successfully.";
         }
-         
-        protected void cbpassword_CheckedChanged(object sender, EventArgs e)
+
+        protected void btnClear_Click(object sender, EventArgs e)
         {
-            if(cbpassword.Checked == true)
-            {
-                txtPassword.Visible = true;
-                txtPassC.Visible = true;
-                cvPasswords.Enabled = true;
-                lblNewValue.Visible = true;
-                lblPassC.Visible = true;
-            }
-            else
-            {
-                txtPassword.Visible = false;
-                txtPassC.Visible = false; 
-            }
+            // Clear textboxes
+            txtEmail.Text = "";
+            txtPassword.Text = "";
+            txtPasswordC.Text = "";
+            txtFname.Text = "";
+            txtLname.Text = "";
+            txtYOB.Text = "";
+            lblStatus.Text = "";
 
+            // Uncheck checkboxes
+            UncheckAllCheckboxes();
 
+            // Hide all the textboxes and validators
+            ToggleControls(false);
         }
 
-      
+        
     }
 }

@@ -18,9 +18,6 @@
             height: 26px;
             text-align: right;
         }
-        .auto-style6 {
-            text-align: center;
-        }
         .auto-style11 {
             text-align: right;
             height: 35px;
@@ -60,21 +57,21 @@
             <td class="auto-style4">Confirm Password:</td>
             <td>
                 <asp:TextBox ID="txtPasswordC" runat="server" TextMode="Password"></asp:TextBox>
-                <asp:CompareValidator ID="cvPassword" runat="server" ErrorMessage="Passwords must match"></asp:CompareValidator>
+                <asp:CompareValidator ID="cvPassword" runat="server" ErrorMessage="Passwords must match" ControlToCompare="txtPassword" ControlToValidate="txtPasswordC"></asp:CompareValidator>
             </td>
         </tr>
         <tr>
             <td class="auto-style5">First Name:</td>
             <td class="auto-style3">
                 <asp:TextBox ID="txtFname" runat="server"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="rfvFname" runat="server" ErrorMessage="First name is required"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="rfvFname" runat="server" ErrorMessage="First name is required" ControlToValidate="txtFname"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
             <td class="auto-style4">Last Name:</td>
             <td>
                 <asp:TextBox ID="txtLname" runat="server"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="rfvLname" runat="server" ErrorMessage="Last name is required"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="rfvLname" runat="server" ErrorMessage="Last name is required" ControlToValidate="txtLname"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -93,31 +90,31 @@
             </td>
         </tr>
         <tr>
-            <td class="auto-style6" colspan="2">
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Student4720ConnectionString3 %>" DeleteCommand="DELETE FROM [Login] WHERE [Email] = @Email" InsertCommand="INSERT INTO [Login] ([Email], [Password], [FName], [LName], [YOB]) VALUES (@Email, @Password, @FName, @LName, @YOB)" OnSelecting="SqlDataSource1_Selecting" SelectCommand="SELECT * FROM [Login] WHERE ([Email] = @Email)" UpdateCommand="UPDATE [Login] SET [Password] = @Password, [FName] = @FName, [LName] = @LName, [YOB] = @YOB WHERE [Email] = @Email" ProviderName="<%$ ConnectionStrings:Student4720ConnectionString3.ProviderName %>">
-                    <DeleteParameters>
-                        <asp:Parameter Name="Email" Type="String" />
-                    </DeleteParameters>
-                    <InsertParameters>
-                        <asp:Parameter Name="Email" Type="String" />
-                        <asp:Parameter Name="Password" Type="String" />
-                        <asp:Parameter Name="FName" Type="String" />
-                        <asp:Parameter Name="LName" Type="String" />
-                        <asp:Parameter Name="YOB" Type="Int32" />
-                    </InsertParameters>
-                    <SelectParameters>
-                        <asp:Parameter Name="Email" Type="String" />
-                    </SelectParameters>
-                    <UpdateParameters>
-                        <asp:Parameter Name="Password" Type="String" />
-                        <asp:Parameter Name="FName" Type="String" />
-                        <asp:Parameter Name="LName" Type="String" />
-                        <asp:Parameter Name="YOB" Type="Int32" />
-                        <asp:Parameter Name="Email" Type="String" />
-                    </UpdateParameters>
-                </asp:SqlDataSource>
-                <asp:Label ID="lblMessage" runat="server"></asp:Label>
-            </td>
-        </tr>
-    </table>
+           <td class="auto-style1" colspan="2">
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Student4720ConnectionString2 %>" DeleteCommand="DELETE FROM [Login] WHERE [Email] = @Email" InsertCommand="INSERT INTO [Login] ([Email], [Password], [FName], [LName], [YOB]) VALUES (@Email, @Password, @FName, @LName, @YOB)" SelectCommand="SELECT * FROM [Login] WHERE ([Email] = @Email)" UpdateCommand="UPDATE [Login] SET [Password] = @Password, [FName] = @FName, [LName] = @LName, [YOB] = @YOB WHERE [Email] = @Email">
+                <DeleteParameters>
+                    <asp:Parameter Name="Email" Type="String" />
+                </DeleteParameters>
+                <InsertParameters>
+                    <asp:Parameter Name="Email" Type="String" />
+                    <asp:Parameter Name="Password" Type="String" />
+                    <asp:Parameter Name="FName" Type="String" />
+                    <asp:Parameter Name="LName" Type="String" />
+                    <asp:Parameter Name="YOB" Type="Int32" />
+                </InsertParameters>
+                <SelectParameters>
+                    <asp:Parameter Name="Email" Type="String" />
+                </SelectParameters>
+                <UpdateParameters>
+                    <asp:Parameter Name="Password" Type="String" />
+                    <asp:Parameter Name="FName" Type="String" />
+                    <asp:Parameter Name="LName" Type="String" />
+                    <asp:Parameter Name="YOB" Type="Int32" />
+                    <asp:Parameter Name="Email" Type="String" />
+                </UpdateParameters>
+            </asp:SqlDataSource>
+            <asp:Label ID="lblMsg" runat="server"></asp:Label>
+        </td>
+    </tr>
+</table>
 </asp:Content>
