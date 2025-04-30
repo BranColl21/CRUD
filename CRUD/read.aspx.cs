@@ -75,5 +75,11 @@ namespace CRUD
                 lblMsg.Text = "Invalid User or Password...TRY AGAIN";
             }
         }
+
+        protected System.Void btnClear_Click(System.Object sender, System.EventArgs e)
+        {
+            txtEmail.Text = "";
+            txtPassword.Text = "";
+        }
     }
 }

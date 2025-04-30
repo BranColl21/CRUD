@@ -39,46 +39,46 @@
             <td class="auto-style4">&nbsp;Email:</td>
             <td>
                 <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="rvfEmail" runat="server" ControlToValidate="txtEmail" ErrorMessage="Email is required"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtEmail" ErrorMessage="Email is required"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
-            <td class="auto-style4">Confirm Email</td>
+            <td class="auto-style4">Confirm Email:</td>
             <td>
                 <asp:TextBox ID="txtEmailC" runat="server"></asp:TextBox>
-                <asp:CompareValidator ID="cvEmail" runat="server" ControlToCompare="txtEmail" ControlToValidate="txtEmailC" ErrorMessage="Email must match"></asp:CompareValidator>
+                <asp:CompareValidator ID="cvEmail" runat="server" ControlToCompare="txtEmail" ControlToValidate="txtEmailC" ErrorMessage="Emails must match"></asp:CompareValidator>
             </td>
         </tr>
         <tr>
             <td class="auto-style11">Password:</td>
             <td class="auto-style12">
-                <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtPassword" ErrorMessage="Password is required"></asp:RequiredFieldValidator>
+                <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="rfvPassword" runat="server" ControlToValidate="txtPassword" ErrorMessage="Password is required"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
             <td class="auto-style4">Confirm Password:</td>
             <td>
-                <asp:TextBox ID="txtPasswordC" runat="server"></asp:TextBox>
-                <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="CompareValidator"></asp:CompareValidator>
+                <asp:TextBox ID="txtPasswordC" runat="server" TextMode="Password"></asp:TextBox>
+                <asp:CompareValidator ID="cvPassword" runat="server" ErrorMessage="Passwords must match"></asp:CompareValidator>
             </td>
         </tr>
         <tr>
             <td class="auto-style5">First Name:</td>
             <td class="auto-style3">
                 <asp:TextBox ID="txtFname" runat="server"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="rfvFname" runat="server" ErrorMessage="First name is required"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
             <td class="auto-style4">Last Name:</td>
             <td>
                 <asp:TextBox ID="txtLname" runat="server"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="rfvLname" runat="server" ErrorMessage="Last name is required"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
-            <td class="auto-style4">Year of Birth</td>
+            <td class="auto-style4">Year of Birth:</td>
             <td>
                 <asp:TextBox ID="txtYOB" runat="server">YYYY</asp:TextBox>
                 <asp:RegularExpressionValidator ID="revYOB" runat="server" ControlToValidate="txtYOB" EnableClientScript="False" ErrorMessage="Please use a four digit year" ValidationExpression="\d{4}"></asp:RegularExpressionValidator>
@@ -88,7 +88,9 @@
             <td class="auto-style4">
                 <asp:Button ID="btnRegister" runat="server" OnClick="btnRegister_Click" Text="Register" />
             </td>
-            <td>&nbsp;</td>
+            <td>
+                <asp:Button ID="btnClear" runat="server" Text="Clear" />
+            </td>
         </tr>
         <tr>
             <td class="auto-style6" colspan="2">
@@ -114,6 +116,7 @@
                         <asp:Parameter Name="Email" Type="String" />
                     </UpdateParameters>
                 </asp:SqlDataSource>
+                <asp:Label ID="lblMessage" runat="server"></asp:Label>
             </td>
         </tr>
     </table>

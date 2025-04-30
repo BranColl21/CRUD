@@ -69,7 +69,7 @@ namespace CRUD
             //declare a command
 
             //set parameter for email
-            UCommand.Parameters.AddWithValue("@Email", Session["email"].ToString));
+            UCommand.Parameters.AddWithValue("@Email", Session["email"].ToString);
 
             //set parameter for password
             if (cbpassword.Checked == true)
@@ -80,15 +80,17 @@ namespace CRUD
             {
                 UCommand.Parameters.AddWithValue("@Password", lblPassword.Text);
             }
+
+            //open the connection 
+
+            //execute the command 
+
+            //close the connection 
+
+            //show users the changes 
+            Response.Redirect("update.aspx");
         }
-        //open the connection 
-        
-        //execute the command 
-
-        //close the connection 
-
-        //show users the changes 
-        Response.Redirect("update.aspx"); 
+         
         protected void cbpassword_CheckedChanged(object sender, EventArgs e)
         {
             if(cbpassword.Checked == true)

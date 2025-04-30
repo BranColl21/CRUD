@@ -20,7 +20,6 @@ namespace CRUD
         protected void btnRegister_Click(object sender, EventArgs e)
         {
             //declare a sqlconnection
-
             SqlConnection RegCon = new SqlConnection(SqlDataSource1.ConnectionString);
 
             //declare a command
@@ -29,8 +28,10 @@ namespace CRUD
             RegCommand.Connection = RegCon;
 
             RegCommand.Parameters.AddWithValue("@Email", txtEmail.Text);
-
-            //all the rest of the fields
+            RegCommand.Parameters.AddWithValue("@Password", txtPassword.Text);
+            RegCommand.Parameters.AddWithValue("@FName", txtFname.Text);
+            RegCommand.Parameters.AddWithValue("@LName", txtLname.Text);
+            RegCommand.Parameters.AddWithValue("@YOB", txtYOB.Text);
 
             //open the connection
             RegCon.Open();

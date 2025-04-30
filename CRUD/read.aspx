@@ -44,7 +44,7 @@
                 <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" />
             </td>
             <td>
-                <asp:Button ID="btnClear" runat="server" Text="Clear" />
+                <asp:Button ID="btnClear" runat="server" Text="Clear" OnClick="btnClear_Click" />
             </td>
         </tr>
         <tr>
