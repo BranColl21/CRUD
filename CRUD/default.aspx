@@ -7,10 +7,10 @@
         .auto-style2 {
             text-align: center;
         }
-        .auto-style3 {
-            text-align: center;
-            height: 28px;
-        }
+    .auto-style3 {
+        text-align: center;
+        height: 28px;
+    }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -38,7 +38,8 @@
                         </tr>
                         <tr>
                             <td class="auto-style2">
-                                &nbsp;</td>
+                                <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/aboutus.aspx">About Us</asp:HyperLink>
+                            </td>
                         </tr>
                         <tr>
                             <td>&nbsp;</td>

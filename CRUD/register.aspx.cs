@@ -46,6 +46,8 @@ namespace CRUD
 
             //send to a page
             Response.Redirect("default.aspx");
+            Session["user"] = null;
+            Session["email"] = null;
         }
 
         protected void btnClear_Click(object sender, EventArgs e)
