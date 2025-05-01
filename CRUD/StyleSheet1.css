@@ -22,8 +22,9 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    line-height: 1.5;
+    line-height: 1.6;
     text-rendering: optimizeLegibility;
+    font-size: 18px; /* Increased from default */
 }
 
 header {
@@ -32,11 +33,31 @@ header {
     color: var(--black);
     text-align: center;
     border-bottom: 4px solid var(--accent-blue);
-    font-size: 2.5rem;
+    font-size: 2.75rem; /* Slightly increased */
     font-weight: 600;
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     width: 100%;
     min-height: 80px;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+}
+
+h4, h5 {
+    font-size: 1.5rem;
+}
+
+p, span, li, a {
+    font-size: 1.125rem;
 }
 
 h1, h2, h3, h4, h5, p, span, div, li, a {
@@ -61,7 +82,7 @@ button {
     color: var(--black);
     border: none;
     padding: 0.75rem 1.5rem;
-    font-size: 1rem;
+    font-size: 1.125rem; /* Increased */
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -86,4 +107,4 @@ button {
     max-width: 600px;
     width: 100%;
     color: var(--white);
-}
+    font-size: 1.125rem; /* Increased */

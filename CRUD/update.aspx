@@ -2,6 +2,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         /* (same styling kept) */
+        .auto-style1 {
+            width: 156px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -14,7 +17,7 @@
         Click the update tab to refresh and see your changes.</p>
     <table class="auto-style12">
         <tr>
-            <td class="auto-style23">Update Info</td>
+            <td class="auto-style1">Update Info</td>
             <td class="auto-style16">Current Value</td>
             <td class="auto-style17">
                 <asp:Label ID="lblNewValue" runat="server" Text="New Value"></asp:Label>
@@ -22,7 +25,7 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style15">
+            <td class="auto-style1">
                 <asp:CheckBox ID="cbEmail" runat="server" AutoPostBack="True" OnCheckedChanged="cbEmail_CheckedChanged" />
             </td>
             <td class="auto-style16">Email:<asp:Label ID="lblEmail" runat="server"></asp:Label>
@@ -35,7 +38,7 @@
             </td>
         </tr>
         <tr>
-            <td class="auto-style15">
+            <td class="auto-style1">
                 <asp:CheckBox ID="cbPassword" runat="server" AutoPostBack="True" OnCheckedChanged="cbPassword_CheckedChanged" />
             </td>
             <td class="auto-style16">Password:<asp:Label ID="lblPassword" runat="server"></asp:Label>
@@ -48,7 +51,7 @@
             </td>
         </tr>
         <tr>
-            <td class="auto-style15">&nbsp;</td>
+            <td class="auto-style1">&nbsp;</td>
             <td class="auto-style16">
                 <asp:Label ID="lblPasswordC" runat="server" Text="Confirm Password"></asp:Label>
                 </td>
@@ -60,7 +63,7 @@
             </td>
         </tr>
         <tr>
-            <td class="auto-style15">
+            <td class="auto-style1">
                 <asp:CheckBox ID="cbFname" runat="server" AutoPostBack="True" OnCheckedChanged="cbFname_CheckedChanged" />
             </td>
             <td class="auto-style16">First Name:<asp:Label ID="lblFname" runat="server"></asp:Label>
@@ -73,7 +76,7 @@
             </td>
         </tr>
         <tr>
-            <td class="auto-style19">
+            <td class="auto-style1">
                 <asp:CheckBox ID="cbLname" runat="server" AutoPostBack="True" OnCheckedChanged="CheckBox5_CheckedChanged" />
             </td>
             <td class="auto-style20">Last Name:<asp:Label ID="lblLname" runat="server"></asp:Label>
@@ -86,7 +89,7 @@
             </td>
         </tr>
         <tr>
-            <td class="auto-style15">
+            <td class="auto-style1">
                 <asp:CheckBox ID="cbYOB" runat="server" AutoPostBack="True" OnCheckedChanged="cbYOB_CheckedChanged" />
             </td>
             <td class="auto-style16">YOB:<asp:Label ID="lblYOB" runat="server"></asp:Label>

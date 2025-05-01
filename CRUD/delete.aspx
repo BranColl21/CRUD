@@ -10,13 +10,18 @@
         .auto-style13 {
             height: 26px;
         }
+        .auto-style14 {
+            height: 209px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="auto-style11">
         <table class="auto-style12">
             <tr>
-                <td>We hate to see you go..... but if you want to leave, type your email address below and press the little delete button</td>
+                <td class="auto-style14">
+                    <br />
+                    We hate to see you go..... but if you want to leave, type your email address below and press the little delete button</td>
             </tr>
             <tr>
                 <td>

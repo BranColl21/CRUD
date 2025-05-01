@@ -15,7 +15,10 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table class="auto-style11">
         <tr>
-            <td class="auto-style12">Welcome
+            <td class="auto-style12">
+                <br />
+                <br />
+                Welcome
                 <asp:Label ID="lblMsg" runat="server"></asp:Label>
                 , you have successfully logged in!!!</td>
         </tr>
