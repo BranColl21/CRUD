@@ -49,9 +49,10 @@
         </tr>
         <tr>
             <td class="auto-style15">&nbsp;</td>
-            <td class="auto-style16">&nbsp;</td>
-            <td class="auto-style17">
+            <td class="auto-style16">
                 <asp:Label ID="lblPasswordC" runat="server" Text="Confirm Password"></asp:Label>
+                </td>
+            <td class="auto-style17">
                 <asp:TextBox ID="txtPasswordC" runat="server" TextMode="Password"></asp:TextBox>
             </td>
             <td>

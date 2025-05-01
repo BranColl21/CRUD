@@ -14,7 +14,7 @@
         <div>              
                     <asp:HyperLink ID="hlHome" runat="server" NavigateUrl="~/default.aspx">Home</asp:HyperLink>
 &nbsp;|
-                    <asp:HyperLink ID="hlRead" runat="server" NavigateUrl="~/read.aspx">Read</asp:HyperLink>
+                    <asp:HyperLink ID="hlRead" runat="server" NavigateUrl="~/read.aspx">Login</asp:HyperLink>
 &nbsp;|
                     <asp:HyperLink ID="hlRegister" runat="server" NavigateUrl="~/register.aspx">Register</asp:HyperLink>
 &nbsp;|
